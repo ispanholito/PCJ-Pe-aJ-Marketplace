@@ -1,0 +1,27 @@
+# Flutter / Dart — dependências e builds (o pubspec.lock É versionado: PGC 13)
+.dart_tool/
+.packages
+build/
+coverage/
+*.iml
+
+# Android / iOS gerados localmente
+android/.gradle/
+android/local.properties
+android/app/*.jks
+*.keystore
+ios/Pods/
+ios/.symlinks/
+
+# Variáveis de ambiente locais — NUNCA versionar segredos (PGC 4.1)
+.env
+.env.*
+!.env.example
+
+# Sistema operacional / editores
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.log
