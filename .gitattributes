@@ -1,1 +1,7 @@
-
+# Normaliza finais de linha: evita que máquinas Windows gravem CRLF
+# em arquivos que rodam no Linux dos runners do GitHub (PGC 4.1).
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.pdf binary
+*.jks binary
