@@ -1,0 +1,12 @@
+{
+  "name": "PeçaJá Marketplace",
+  "short_name": "PeçaJá",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#1B3A5C",
+  "theme_color": "#1B3A5C",
+  "description": "Encontre e reserve autopeças nas lojas da sua região.",
+  "orientation": "portrait-primary",
+  "prefer_related_applications": false,
+  "icons": []
+}
