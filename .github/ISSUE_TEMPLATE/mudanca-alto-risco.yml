@@ -1,0 +1,38 @@
+name: Mudança de alto risco (CCM)
+description: Mudança que exige decisão do Comitê de Controle de Mudanças — PGC 8.2
+title: '[Alto risco] '
+labels: ['ccm']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use este formulário apenas para mudanças que se enquadram no PGC 8.2.
+        O CCM (responsável de GCS + par de revisão) registra a decisão nos comentários.
+  - type: checkboxes
+    id: criterio
+    attributes:
+      label: Por que é alto risco?
+      options:
+        - label: Envolve dados pessoais de clientes ou lojistas (LGPD)
+        - label: Altera estrutura de dados persistidos
+        - label: Altera regras de proteção da main, Environments ou pipelines de deploy
+        - label: 'Exceção ao fluxo padrão (ex.: hotfix sem passar por staging)'
+        - label: Nova dependência que pede permissões no app
+  - type: textarea
+    id: descricao
+    attributes:
+      label: Descrição da mudança
+    validations:
+      required: true
+  - type: textarea
+    id: rollback
+    attributes:
+      label: Plano de rollback
+      description: 'Como voltar atrás se der errado? (tag anterior, revert, feature flag)'
+    validations:
+      required: true
+  - type: textarea
+    id: decisao
+    attributes:
+      label: Decisão do CCM (preenchido pelo comitê)
+      placeholder: Aprovada / Aprovada com ressalvas / Rejeitada — justificativa
