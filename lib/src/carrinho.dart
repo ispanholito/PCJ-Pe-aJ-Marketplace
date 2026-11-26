@@ -31,6 +31,18 @@ class Carrinho {
       .map((e) => _pecas[e.key]!.precoCentavos * e.value)
       .fold(0, (a, b) => a + b);
 
+  /// Calcula o total em centavos aplicando um [percentualDesconto] (0 a 100).
+  int totalComDesconto(int percentualDesconto) {
+    if (percentualDesconto < 0 || percentualDesconto > 100) {
+      throw ArgumentError.value(
+        percentualDesconto,
+        'percentualDesconto',
+        'deve estar entre 0 e 100',
+      );
+    }
+    return (totalCentavos * (100 - percentualDesconto)) ~/ 100;
+  }
+
   /// Lojas envolvidas na reserva (cada uma gera uma retirada).
   Set<String> get lojas => _pecas.values.map((p) => p.loja).toSet();
 
