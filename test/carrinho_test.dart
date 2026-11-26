@@ -35,4 +35,11 @@ void main() {
     expect(c.vazio, isTrue);
     expect(c.totalCentavos, 0);
   });
+
+  test('calcula total com desconto válido e recusa percentual inválido', () {
+    final c = Carrinho()..adicionar(pastilha, quantidade: 2); // 25980 centavos
+    expect(c.totalComDesconto(10), 23382);
+    expect(() => c.totalComDesconto(-5), throwsArgumentError);
+    expect(() => c.totalComDesconto(110), throwsArgumentError);
+  });
 }
